@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="device-width, initial-scale=1.0" />
+    <meta name="description" content="Le Lion" />
+    <title>Le Lion - Alvyn</title>
+    <link href="https://www.afecdax.ovh/ressources/dev/html/exercices/htmlstarter.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="images/logo.svg" />
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/Logo.svg" alt="logo" />
+        </div>
+        <nav>
+            <h1>Le Lion : Roi de la Savane</h1>
+            <details>
+                <summary><strong>Sommaire</strong></summary>
+                <ul>
+                    <li><a href="#presentation">Présentation</a></li>
+                    <br>
+                    <li><a href="#caracteristiques">Caractéristiques</a></li>
+                    <br>
+                    <li><a href="#alimentation">Alimentation</a></li>
+                </ul>
+            </details>
+        </nav>
+    </header>
+    <section id="presentation">
+        <h2>Présentation du Lion</h2>
+        <picture>
+            <source media="(max-width: 767px)" srcset="images/lion_mobile.jpg">
+            <source media="(min-width: 768px)" srcset="images/lion_desktop.jpg">
+            <img src="images/lion_desktop.jpg" alt="Image d’un lion">
+        </picture>
+        <p>Le <strong>lion</strong> (Panthera leo) est un mammifère carnivore de la famille des félins. Il est
+            souvent
+            surnommé <strong>le roi des animaux</strong> en raison de sa
+            <br>
+            prestance et de sa position de prédateur au sommet de la
+            chaîne alimentaire.
+        </p>
+    </section>
+
+    <section id="caracteristiques">
+        <h2>Caractéristiques du lion</h2>
+        <table>
+            <tr>
+                <th>Caractéristiques</th>
+                <th>Détails</th>
+            </tr>
+            <tr>
+                <td>Famille</td>
+                <td>Félidés</td>
+            </tr>
+            <tr>
+                <td>Poids</td>
+                <td>150 à 250 kg</td>
+            </tr>
+            <tr>
+                <td>Longévité</td>
+                <td>10 à 15 ans (sauvage), jusqu'à 25 ans (captivité)</td>
+            </tr>
+            <tr>
+                <td>Habitat</td>
+                <td>Savane africaine, quelques populations en Asie</td>
+            </tr>
+        </table>
+    </section>
+    <section id="alimentation">
+        <h2>Alimentation</h2>
+        <p>Le lion est un <strong>carnivore</strong> opportuniste qui chasse principalement
+            des <strong>herbivores</strong> tels que :</p>
+        <ol type="A">
+            <li>Zèbres</li>
+            <li>Gnous</li>
+            <li>Antilopes</li>
+            <li>Buffles</li>
+        </ol>
+    </section>
+    <section>
+        <h2>Le saviez-vous ?</h2>
+        <p>Contrairement aux autres félins, les lions vivent en groupe appelé <strong>pride</strong>, dirigé par un
+            mâle dominant. Ils peuvent rugir si fort que leur cri est audible à plus de 8 km !</p>
+    </section>
+    <section>
+        <h2>Ajouter un commentaire</h2>
+        <form action="commentaires" method="post">
+            <fieldset>
+                <div>
+                    <label for="name">Votre pseudonyme :</label>
+                    <input type="text" id="name" placeholder="Indiquez votre pseudonyme" />
+                    <label for="mail">Votre adresse e-mail :</label>
+                    <input type="email" id="mail" placeholder="Indiquez votre email" />
+                    <label for="msg">Votre commentaire :</label>
+                    <textarea id="msg" placeholder="Indiquez votre message"></textarea>
+                    <div>
+                        <label for="rgpd">
+                            <input type="checkbox" id="rgpd" name="commentaires" />
+                            En ajoutant un commentaire, je reconnais avoir pris connaissance
+                            de la <a href="">Politique de confidentialité</a> et des droits dont je dispose sur mes
+                            données
+                            personnelles.</label>
+                        <button class="commentaire" type="button">Ajouter mon commentaire</button>
+                        <div class="">
+                            <input type="hidden" value="civilité">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <h2>0 commentaires</h2>
+        <p>Aucun commentaire publié sur cet article.</p>
+    </section>
+    <footer>
+        <p>© 2025 Blog sur la Faune Sauvage | <a href="Mentions-legales">Mentions légales</a></p>
+    </footer>
+</body>
+
+</html>
