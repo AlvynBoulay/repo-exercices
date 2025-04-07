@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            height: 100vh;
+            counter-reset: grid-counter;
+            background: #c7f4d0;
+            padding: 0 10px;
+        }
+
+        .grid {
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 2%;
+        }
+
+        .item {
+            background-color: #f08080;
+            counter-increment: grid-counter;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .item:before {
+            content: "Item " counter(grid-counter);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+</body>
+
+</html>
