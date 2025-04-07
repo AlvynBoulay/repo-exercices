@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interface Non Accessible</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="header" role="banner">
+        <h1>Bienvenue sur notre site</h1>
+        <div class="nav" role="navigation" aria-label="Menu principal">
+            <ul>
+                <li><a href="#" title="Accueil" tabindex="0">Accueil</a></li>
+                <li><a href="#" title="Services" tabindex="0">Services</a></li>
+                <li><a href="#" title="Contact" tabindex="0">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main" role="main">
+        <h2 id="servicesTitle">Nos Services</h2>
+        <button id="menuServices-toggle" class="toggle_menu_services" aria-expanded="false" aria-controls="menuServices"
+            aria-labelledby="servicesTitle" aria-label="Afficher ou masquer les services">
+            ☰ Menu
+        </button>
+
+        <ul class="menu_services" id="menuServices" role="menu" aria-label="Liste des services proposés" hidden>
+            <li><a href="#" title="Développement web" tabindex="0">Développement web</a></li>
+            <li><a href="#" title="SEO" tabindex="0">SEO</a></li>
+            <li><a href="#" title="SEA" tabindex="0">SEA</a></li>
+            <li><a href="#" title="Marketing Digital" tabindex="0">Marketing Digital</a></li>
+            <li><a href="#" title="UX Design" tabindex="0">UX Design</a></li>
+        </ul>
+
+        <div class="service" aria-labelledby="devWebTitle">
+            <h2 id="devWebTitle">Développement Web</h2>
+            <p>Nous créons des sites modernes et sur-mesure.</p>
+            <button aria-label="En savoir plus sur le développement web">En savoir plus</button>
+        </div>
+
+        <div class="service" aria-labelledby="SEOTitle">
+            <h2 id="SEOTitle">SEO</h2>
+            <p>Optimisation des sites pour Google.</p>
+            <button aria-label="En savoir plus sur le SEO">En savoir plus</button>
+        </div>
+
+        <img src="http://picsum.photos/800/600?v=1" alt="image_aleatoire" />
+
+        <div class="contact" aria-labelledby="contactTitle">
+            <h3 id="contactTitle">Nous contacter</h3>
+            <form aria-label="Formulaire de contact">
+                <input type="text" placeholder="Nom complet" aria-label="Nom complet" />
+                <input type="email" placeholder="Email" aria-label="Adresse mail" />
+                <textarea placeholder="Votre message" aria-label="Votre message"></textarea>
+                <button>Envoyer</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        <p>© 2025 - Tous droits réservés</p>
+    </div>
+    <script>
+        // Script pour gérer l'ouverture/fermeture du menu accessible
+        document
+            .getElementById("menuServices-toggle")
+            .addEventListener("click", function () {
+                let menu = document.getElementById("menuServices");
+                let expanded = this.getAttribute("aria-expanded") === "true" || false;
+
+                this.setAttribute("aria-expanded", !expanded);
+                menu.hidden = expanded;
+            });
+    </script>
+</body>
+
+</html>
