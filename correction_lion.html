@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Le Lion - Roi de la Savane</title>
+		<meta name="description" content="Le lion, roi de la savane" />
+		<link
+			href="https://www.afecdax.ovh/ressources/dev/html/exercices/htmlstarter.css"
+			rel="stylesheet" />
+	</head>
+	<body>
+		<!-- En-tête -->
+		<header>
+			<img src="logo.svg" alt="Le Lion : Roi de la Savane" />
+			<h1>Le Lion : Roi de la Savane</h1>
+		</header>
+
+		<!-- Navigation -->
+		<details open>
+			<summary>Sommaire</summary>
+			<ul>
+				<li><a href="#Presentation" title="Présentation">Présentation</a></li>
+				<li><a href="#Caracteristiques" title="Caractéristiques">Caractéristiques</a></li>
+				<li><a href="#Alimentation" title="Alimentation">Alimentation</a></li>
+			</ul>
+		</details>
+
+		<!-- Contenu principal -->
+		<main>
+			<!-- Article sur le Lion -->
+			<article>
+				<h2 id="Presentation">Présentation du Lion</h2>
+				<picture>
+					<source srcset="lion_mobile.jpg" media="(max-width: 600px)" />
+					<source srcset="lion_desktop.jpg" media="(max-width: 1024px)" />
+					<img src="lion_desktop.jpg" alt="Un lion majestueux dans la savane" />
+				</picture>
+				<p>
+					Le <strong>lion</strong> (<em>Panthera leo</em>) est un mammifère
+					carnivore de la famille des félins. Il est souvent surnommé
+					<strong>le roi des animaux</strong> en raison de sa prestance et de sa
+					position de prédateur au sommet de la chaîne alimentaire.
+				</p>
+
+				<h2 id="Caracteristiques">Caractéristiques du Lion</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Caractéristique</th>
+							<th>Détails</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Famille</td>
+							<td>Félidés</td>
+						</tr>
+						<tr>
+							<td>Poids</td>
+							<td>150 à 250 kg</td>
+						</tr>
+						<tr>
+							<td>Longévité</td>
+							<td>10 à 15 ans (sauvage), jusqu'à 25 ans (captivité)</td>
+						</tr>
+						<tr>
+							<td>Habitat</td>
+							<td>Savane africaine, quelques populations en Asie</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h2 id="Alimentation">Alimentation</h2>
+				<p>
+					Le lion est un <strong>carnivore</strong> opportuniste qui chasse
+					principalement des <strong>herbivores</strong> tels que :
+				</p>
+
+				<ol type="A">
+					<li>Zèbres</li>
+					<li>Gnous</li>
+					<li>Antilopes</li>
+					<li>Buffles</li>
+				</ol>
+
+				<h2>Le saviez-vous ?</h2>
+				<p>
+					Contrairement aux autres félins, les lions vivent en groupe appelé
+					<strong>pride</strong>, dirigé par un mâle dominant. Ils peuvent rugir
+					si fort que leur cri est audible à plus de 8 km !
+				</p>
+			</article>
+		</main>
+
+		<section>
+			<h2>Ajouter un commentaire</h2>
+			<form action="" method="post">
+				<fieldset>
+					<div class="form-group">
+						<div>
+							<label for="pseudo">Pseudonyme :</label>
+						</div>
+						<input
+							id="pseudo"
+							type="text"
+							value=""
+							placeholder="Indiquez votre pseudonyme"
+							required />
+					</div>
+					<div class="form-group">
+						<div>
+							<label for="email">Email :</label>
+						</div>
+						<input
+							id="email" 
+							type="email" 
+							value="" 
+							placeholder="Indiquez votre email" 
+							required />
+					</div>
+					<div class="form-group">
+						<label for="country">Pays :</label>
+						<select name="" id="country">
+							<option value="fr">France</option>
+							<option value="jp">Japon</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<div>
+							<label for="message">Message :</label>
+						</div>
+						<textarea
+							id="message"
+							name="message"
+							placeholder="Indiquez votre message"
+							required>
+						</textarea>
+					</div>
+					<div class="form-group">
+						<button type="submit">Ajouter mon commentaire</button>
+					</div>
+				</fieldset>
+			</form>
+
+			<h2>0 commentaires</h2>
+			<p>Aucun commentaire publié sur cet article.</p>
+		</section>
+
+		<footer>
+			<p>
+				&copy; 2024 Blog sur la Faune Sauvage | <a href="#" title="Mentions légales">Mentions légales</a>
+			</p>
+		</footer>
+	</body>
+</html>

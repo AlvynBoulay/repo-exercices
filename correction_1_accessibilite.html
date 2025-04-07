@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Interface Accessible</title>
+		<meta name="description" content="Voici une page acessible" />
+		<link rel="stylesheet" href="https://www.afecdax.ovh/ressources/dev/html/exercices/htmlstarter.css" />
+	</head>
+	<body>
+		<h1>Bienvenue sur notre site</h1>
+		<header role="banner">
+			<nav role="navigation" aria-label="Menu principal">
+				<ul>
+					<li>
+						<a href="#" title="Retour à l'accueil" tabindex="0">Accueil</a>
+					</li>
+					<li>
+						<a href="#" title="Découvrez nos services" tabindex="0">Services</a>
+					</li>
+					<li>
+						<a href="#" title="Nous contacter" tabindex="0">Contact</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<main role="main">
+			<h2>Nos Services</h2>
+			<button
+				id="menuServices-toggle"
+				aria-expanded="false"
+				aria-controls="menuServices"
+				tabindex="0">
+				☰ Menu
+			</button>
+			<div id="menuServices" hidden>
+				<nav role="navigation" aria-label="Menu Services"></nav>
+					<ul>
+						<li>
+							<a href="#" title="Développement web" tabindex="0">Développement web</a>
+						</li>
+						<li>
+							<a href="#" title="SEO" tabindex="0">SEO</a>
+						</li>
+						<li>
+							<a href="#" title="SEA" tabindex="0">SEA</a>
+						</li>
+						<li>
+							<a href="#" title="Marketing Digital" tabindex="0">Marketing Digital</a>
+						</li>
+						<li>
+							<a href="#" title="UX Design" tabindex="0">UX Design</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="service" role="region" aria-labelledby="service-web">
+				<h3 id="service-web">Développement Web</h3>
+				<p>Nous créons des sites modernes et responsives.</p>
+				<button
+					aria-label="Plus d'informations sur le développement web"
+					tabindex="0">
+					En savoir plus
+				</button>
+			</div>
+
+			<div class="service" role="region" aria-labelledby="service-seo">
+				<h3 id="service-seo">SEO</h3>
+				<p>
+					Optimisation des sites pour Google et autres moteurs de recherche.
+				</p>
+				<button aria-label="Plus d'informations sur le SEO" tabindex="0">
+					En savoir plus
+				</button>
+			</div>
+
+			<img
+				src="image.jpg"
+				alt="Illustration des services proposés"
+				aria-hidden="true" />
+			
+			<div class="contact">
+				<h2>Nous contacter</h2>
+				<form action="/contact" method="post" aria-labelledby="form-title">
+					<fieldset>
+					  <legend id="form-title">Formulaire de contact</legend>
+					  <div class="form-group">
+						<label for="fullname">Nom complet :</label>
+						<input 
+						  type="text" 
+						  id="fullname" 
+						  name="fullname" 
+						  required 
+						  aria-required="true" 
+						  autocomplete="name" />
+					  </div>
+				  
+					  <div class="form-group">
+						<label for="email">Adresse email :</label>
+						<input 
+						  type="email" 
+						  id="email" 
+						  name="email" 
+						  required 
+						  aria-required="true" 
+						  autocomplete="email" />
+					  </div>
+				  
+					  <div class="form-group">
+						<label for="message">Message :</label>
+						<textarea 
+						  id="message" 
+						  name="message" 
+						  rows="5" 
+						  required 
+						  aria-required="true"
+						  aria-describedby="message-help"></textarea>
+						<small id="message-help">Merci de détailler votre demande.</small>
+					  </div>
+				  
+					  <div class="form-group">
+						<button type="submit">Envoyer</button>
+					  </div>
+					</fieldset>
+				</form>
+			</div>
+
+		</main>
+
+		<footer role="contentinfo">
+			<p>© 2024 - Tous droits réservés</p>
+		</footer>
+
+		<script>
+			// Script pour gérer l'ouverture/fermeture du menu accessible
+			document
+				.getElementById("menuServices-toggle")
+				.addEventListener("click", function () {
+					let menu = document.getElementById("menuServices");
+					let expanded = this.getAttribute("aria-expanded") === "true" || false;
+
+					this.setAttribute("aria-expanded", !expanded);
+					menu.hidden = expanded;
+				});
+		</script>
+	</body>
+</html>
