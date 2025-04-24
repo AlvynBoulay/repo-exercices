@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        html {
+            padding: 60px;
+        }
+
+        body {
+            font-size: 1.2rem;
+            background: #222222;
+            background: radial-gradient(circle, rgba(34, 34, 34, 1) 0%, rgba(0, 0, 0, 1) 100%);
+            color: #fff;
+        }
+
+        a {
+            color: yellow !important;
+        }
+
+        h1 {
+            color: rgb(253, 132, 62);
+        }
+
+        strong {
+            color: rgb(62, 199, 253);
+        }
+
+        h1 span:first-of-type {
+            color: rgb(84, 122, 246)
+        }
+
+        h1 span:last-of-type {
+            color: rgb(63, 244, 102)
+        }
+
+        u {
+            color: rgb(0, 195, 255);
+        }
+
+        code pre {
+            background: #333;
+            border: 1px solid #000;
+            border-radius: 20px;
+            padding: 20px;
+            display: block;
+            white-space: pre-wrap;
+            margin-bottom: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, .6);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="display: flex; gap: 60px;">
+        <code style="line-height: 1.7; width: 60%;">
+	<h1>Corrections – Les variables JS, Manipulation de chaînes de caractères</h1>
+	<h2>🎮 Défi 1 : Majuscule en premier</h2>
+	<p><strong>Consigne</strong></p>
+	<ol>
+		<li>Crée une fonction capitalizeFirstLetter qui prend une chaîne et retourne la même chaîne avec la première lettre en majuscule.</li>
+		<li><i>Exemple :</i> "hello" devient "Hello"</li>
+	</ol>
+	<p><i>Pour ce défi, utilise <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">slice()</a>, <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase">toUppperCase()</a> et l'opérateur +. Affiche le résultat avec <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/log_static">console.log()</a> ou dans <a href="https://developer.mozilla.org/fr/docs/Web/API/Window/alert">alert()</a>.</i></p>
+<pre>
+function capitalizeFirstLetter(str) {
+	return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+ou
+
+function capitalizeFirstLetter2(str) {
+	let firstLetter = str.slice(0,1).toUpperCase();
+	let lastLetters = str.slice(1);
+	return (firstLetter + lastLetters);
+}
+
+console.log(capitalizeFirstLetter('hello')); // "Hello"
+console.log(capitalizeFirstLetter2('world')); // "World"
+</pre>
+	<h2>🎮 Défi 2 : Compte-moi ça</h2>
+	<p><strong>Consigne</strong></p>
+	<ol>
+		<li>Crée une fonction countOccurrences qui prend une chaîne de caractères et un mot, et retourne le nombre de fois où ce mot apparaît dans la chaîne.</li>
+		<li><i>Exemple :</i> "hello hello hello", "hello" → 3</li>
+	</ol>
+	<p><i>Pour ce défi, tu vas utiliser <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split">split</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length">length</a> et l'opérateur -. Affiche le résultat avec <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/log_static">console.log()</a> ou dans <a href="https://developer.mozilla.org/fr/docs/Web/API/Window/alert">alert()</a>.</i></p>
+<pre>
+function countOccurrences(phrase, mot) {
+	return phrase.split(mot).length - 1;
+}
+
+console.log(countOccurrences('hello hello hello', 'hello')); // 3
+console.log(countOccurrences('This is a test', 'test')); // 1
+console.log(countOccurrences('abcd abc abc', 'abc')); // 2
+console.log(countOccurrences('abcd abc abc', 'xyz')); // 0
+</pre>
+	<h2>🎮 Défi 3 : C’est trop long !</h2>
+	<p><strong>Consigne</strong></p>
+	<ol>
+		<li>Crée une fonction truncateString qui raccourcit une chaîne si elle dépasse une certaine longueur et ajoute "..." à la fin.</li>
+		<li><i>Exemple :</i> "Hello, world!", 5 → "Hello..."</li>
+	</ol>
+	<p><i>Pour ce défi, tu vas utiliser <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split">split</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length">length</a> et l'opérateur +. Affiche le résultat avec <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/log_static">console.log()</a> ou dans <a href="https://developer.mozilla.org/fr/docs/Web/API/Window/alert">alert()</a>.</i></p>
+<pre>
+function truncateString(str, maxLength) {
+	return str.length > maxLength ? str.slice(0, maxLength) + "..." : str;
+}
+
+console.log(truncateString('Hello, world!', 5)); // "Hello..."
+console.log(truncateString('Short', 10)); // "Short"
+</pre>
+	<h2>🎮 Défi 4 : Le pouvoir des Regex (Niveau ✭✭✭)</h2>
+	<p><strong>Consigne</strong></p>
+	<ol>
+		<li>Utilise une expression régulière pour compter combien de fois un mot apparaît dans une phrase, même s’il est répété plusieurs fois.</li>
+		<li><i>Exemple :</i> "hello hello hello", "hello" → 3</li>
+	</ol>
+	<p><i>Pour ce défi, tu vas utiliser <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp">RegExp</a>, <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String/match">match()</a> et <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length">length</a>. Affiche le résultat avec <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/log_static">console.log()</a> ou dans <a href="https://developer.mozilla.org/fr/docs/Web/API/Window/alert">alert()</a>.</i></p>
+<pre>
+function countRegexOccurrences(phrase, mot) {
+	const regex = new RegExp(mot, 'g');
+	const matches = phrase.match(regex);
+	return matches ? matches.length : 0;
+}
+
+console.log(countRegexOccurrences('hello hello hello', 'hello')); // 3
+</pre>
+	<h2>🎮 Défi 5 : Extraction ciblée</h2>
+	<p><strong>Consigne</strong></p>
+	<ol>
+		<li>Déclare une variable phrase contenant "Le JavaScript est super".</li>
+		<li>Extrait uniquement le mot "JavaScript" dans une nouvelle variable mot.</li>
+		<li><i>Résultat attendu :</i> "JavaScript"</li>
+	</ol>
+	<p><i>Pour ce défi, tu vas utiliser <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">slice()</a>. Affiche le résultat avec <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/log_static">console.log()</a> ou dans <a href="https://developer.mozilla.org/fr/docs/Web/API/Window/alert">alert()</a>.</i></p>
+<pre>
+let phrase = "Le JavaScript est super";
+let mot = phrase.slice(3, 13);
+console.log(mot); // "JavaScript"
+</pre>
+	<h2>🎮 Défi 6 : Longueur d’une phrase</h2>
+	<p><strong>Consigne</strong></p>
+	<ol>
+		<li>Crée une variable phrase avec "Je suis développeur web".</li>
+		<li><i>Résultat attendu :</i> 23</li>
+	</ol>
+	<p><i>Pour ce défi, tu vas utiliser <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length">length</a>. Affiche le résultat avec <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/log_static">console.log()</a> ou dans <a href="https://developer.mozilla.org/fr/docs/Web/API/Window/alert">alert()</a>.</i></p>
+<pre>
+let phrase = "Je suis développeur web";
+console.log(phrase.length); // 23
+</pre>
+	<h2>🎮 Défi 7 : Nettoyage de texte</h2>
+	<p><strong>Consigne</strong></p>
+	<ol>
+		<li>Crée une variable hello avec " Bonjour le monde ! "</li>
+		<li><i>Résultat attendu :</i> "Bonjour le monde !"</li>
+	</ol>
+	<p><i>Pour ce défi, tu vas utiliser <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String/trim">trim</a>. Affiche le résultat avec <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/log_static">console.log()</a> ou dans <a href="https://developer.mozilla.org/fr/docs/Web/API/Window/alert">alert()</a>.</i></p>
+<pre>
+let phrase = "Je suis développeur web";
+console.log(phrase.length); // 23
+</pre>
+	</code>
+        <div style="width: 40%;">
+            <img src="https://www.afecdax.ovh/ressources/dev/js/exercices/images/variablesjslvl3.jpg"
+                style="max-width: 100%;">
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        html {
+            padding: 60px;
+        }
+
+        body {
+            font-size: 1.2rem;
+            background: #222222;
+            background: radial-gradient(circle, rgba(34, 34, 34, 1) 0%, rgba(0, 0, 0, 1) 100%);
+            color: #fff;
+        }
+
+        a {
+            color: yellow !important;
+        }
+
+        h1 {
+            color: rgb(253, 132, 62);
+        }
+
+        strong {
+            color: rgb(62, 199, 253);
+        }
+
+        h1 span:first-of-type {
+            color: rgb(84, 122, 246)
+        }
+
+        h1 span:last-of-type {
+            color: rgb(63, 244, 102)
+        }
+
+        u {
+            color: rgb(0, 195, 255);
+        }
+
+        code pre {
+            background: #333;
+            border: 1px solid #000;
+            border-radius: 20px;
+            padding: 20px;
+            display: block;
+            white-space: pre-wrap;
+            margin-bottom: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, .6);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="display: flex; gap: 60px;">
+        <code style="line-height: 1.7; width: 60%;">
+	<h1>Corrections – Les variables JS, level 2</h1>
+	<h2>🎮 Défi 1 : Bonjour toi !</h2>
+	<p><strong>Consigne</strong></p>
+	<ol>
+		<li>Crée deux variables prenom et nom.</li>
+		<li>Crée une troisième variable message avec le texte "Bonjour, je m'appelle [prénom] [nom]".</li>
+		<li>Affiche cette variable dans la console.</li>
+	</ol>
+	<p><i>Pour ce défi, tu vas utiliser <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/let">let</a> et <a href="https://developer.mozilla.org/fr/docs/Web/API/Window/alert">alert()</a> ou <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/log_static">console.log()</a> pour afficher le résultat.</i></p>
+<pre>
+let prenom = "Laurent";
+let nom = "Touchet";
+
+let message = "Bonjour, je m'appelle " + prenom + " " + nom;
+console.log(message);
+</pre>
+	<h2>🎮 Défi 2 : Phrase complète</h2>
+	<p><strong>Consigne</strong></p>
+	<ol>
+		<li>Crée trois variables : sujet, verbe, complément.</li>
+		<li>Crée une quatrième variable qui assemble les variables pour former le texte "[sujet] [verbe] [complément].</li>
+		<li>Affiche cette variable dans la console.</li>
+	</ol>
+	<p><i>Pour ce défi, tu vas utiliser <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/let">let</a>, la l'<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators">opérateur +</a> et <a href="https://developer.mozilla.org/fr/docs/Web/API/Window/alert">alert()</a> ou <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/log_static">console.log()</a> pour afficher le résultat.</i></p>
+<pre>
+// Crée trois variables : sujet, verbe, complément
+let sujet = "Le chat";
+let verbe = "dort";
+let complement = "sur le canapé.";
+
+// Assemble-les pour créer une phrase
+let phrase = sujet + " " + verbe + " " + complement;
+console.log(phrase);
+</pre>
+	<h2>🎮 Défi 3 : Calcul de l’âge</h2>
+	<p><strong>Consigne</strong></p>
+	<ol>
+		<li>Crée une variable anneeNaissance avec ton année de naissance (exemple : 1990).</li>
+		<li>Crée une variable anneeActuelle avec l’année en cours (exemple : 2025).</li>
+		<li>Calcule ton âge en soustrayant l’année de naissance à l’année actuelle.</li>
+		<li>Stocke le résultat dans une variable age.</li>
+		<li>Affiche dans la console : "Tu as [age] ans"</li>
+	</ol>
+	<p><i>Pour ce défi, tu vas utiliser <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/let">let</a>, la l'<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators">opérateur -</a> et <a href="https://developer.mozilla.org/fr/docs/Web/API/Window/alert">alert()</a> ou <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/log_static">console.log()</a> pour afficher le résultat.</i></p>
+<pre>
+let anneeNaissance = 1990;
+let anneeActuelle = 2025;
+
+let age = anneeActuelle - anneeNaissance;
+console.log("Tu as " + age + " ans");
+</pre>
+	<h2>🎮 Défi 4 : L'addition simple</h2>
+	<p><strong>Consigne</strong></p>
+	<ol>
+		<li>Crée deux variables a et b contenant chacune un nombre (exemple : 12 et 8).</li>
+		<li>Crée une troisième variable somme qui contient le résultat de a + b.</li>
+		<li>Affiche dans la console le message : "La somme est : [valeur]"</li>
+	</ol>
+	<p><i>Pour ce défi, tu vas utiliser <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/let">let</a>, la l'<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators">opérateur +</a> et <a href="https://developer.mozilla.org/fr/docs/Web/API/Window/alert">alert()</a> ou <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/log_static">console.log()</a> pour afficher le résultat.</i></p>
+<pre>
+// Crée deux variables a et b
+let a = 12;
+let b = 8;
+
+// Calcule la somme
+let somme = a + b;
+console.log("La somme est : " + somme);
+</pre>
+	<h2>🎮 Défi 5 : Peut-on tout modifier ?</h2>
+	<p><strong>Consigne</strong></p>
+	<ol>
+		<li>Crée une variable prenom avec ton prénom. Affiche-la dans la console.</li>
+		<li>Change sa valeur pour un autre prénom, puis affiche-la à nouveau.</li>
+		<li>Crée une variable age avec une valeur numérique (ex. 17).</li>
+		<li>Ajoute 1 à cette variable (pour simuler une année de plus) en utilisant += 1 ou age = age + 1, puis affiche la nouvelle valeur.</li>
+		<li>Crée une <u>constante</u> PI avec la valeur 3.14.</li>
+		<li>Essaie de modifier PI (par exemple, en lui attribuant une nouvelle valeur).
+			<ul>
+				<li>→ Que se passe-t-il ? Observe la console.</li>
+			</ul>
+		</li>
+	</ol>
+	<p><i>Pour ce défi, tu vas utiliser <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/let">let</a>, <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/const">const</a>, la l'<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators">opérateur +=</a> et <a href="https://developer.mozilla.org/fr/docs/Web/API/Window/alert">alert()</a> ou <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/log_static">console.log()</a> pour afficher le résultat.</i></p>
+<pre>
+let prenom = "Léo";
+console.log(prenom);
+prenom = "Emma";
+console.log(prenom); // OK
+
+let age = 17;
+age += 1;
+console.log(age); // Simule une année de plus
+
+const PI = 3.14;
+console.log(PI);
+// PI = 3.14159; // Provoque une erreur → const ne peut pas être modifié
+</pre>
+	</code>
+        <div style="width: 40%;">
+            <img src="https://www.afecdax.ovh/ressources/dev/js/exercices/images/variables.jpg"
+                style="max-width: 100%;">
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        html {
+            padding: 60px;
+        }
+
+        body {
+            font-size: 1.2rem;
+            background: #222222;
+            background: radial-gradient(circle, rgba(34, 34, 34, 1) 0%, rgba(0, 0, 0, 1) 100%);
+            color: #fff;
+        }
+
+        a {
+            color: yellow !important;
+        }
+
+        h1 {
+            color: rgb(72, 253, 0);
+        }
+
+        u {
+            color: rgb(0, 195, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <code><pre>
+        let score = 100;
+        let energy = 80;
+        let hasPotion = false;
+        let inventory = "épée en bois";
+        let isAlive = true;
+
+        hasPotion = true;
+        energy = 80 + 20;
+        energy = energy - 40;
+        score = score - 25;
+        inventory = "";
+        energy = energy - 40;
+        score = score - 40;
+        energy = 0;
+        isAlive = false;
+
+        document.body.prepend('Potion : ' + hasPotion);
+        document.body.prepend('Energie : ' + energy + ' - ');
+        document.body.prepend('Score : ' + score + ' - ');
+        document.body.prepend('Inventaire : ' + inventory + ' - ');
+    </pre></code>
+    <script>
+        let score = 100;
+        let energy = 80;
+        let hasPotion = false;
+        let inventory = "épée en bois";
+        let isAlive = true;
+
+        hasPotion = true;
+        energy = 80 + 20;
+        energy = energy - 40;
+        score = score - 25;
+        inventory = "";
+        energy = energy - 40;
+        score = score - 40;
+        energy = 0;
+        isAlive = false;
+
+        document.body.prepend('Potion : ' + hasPotion);
+        document.body.prepend('Energie : ' + energy + ' - ');
+        document.body.prepend('Score : ' + score + ' - ');
+        document.body.prepend('Inventaire : ' + inventory + ' - ');
+    </script>
+</body>
+
+</html>
