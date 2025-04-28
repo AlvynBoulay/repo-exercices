@@ -34,7 +34,7 @@ if (etudiant) {
     prixApresReduc *= 0.8;
 }
 
-prixApresReduc = prixApresReduc.toFixed(2);
+prixApresReduc = prixApresReduc.toFixed(2); 
 
 /* Etape 4 - Résumé personnalisé */
 let nomSepare = nomcomplet.split(" ");
