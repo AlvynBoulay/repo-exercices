@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démo n°2 - DOM</title>
+</head>
+
+<body>
+
+    <!-- 1 : Créer un élément -->
+    <button onclick="creerElement()">Créer un paragraphe</button>
+    <div id="zoneCreation"></div>
+    <script>
+        function creerElement() {
+            const nouveauParagraphe = document.createElement("p");
+            nouveauParagraphe.textContent = "Je suis un nouveau paragraphe !";
+            document.getElementById("zoneCreation").appendChild(nouveauParagraphe);
+        }
+    </script>
+
+
+    <!-- 2 : Modifier un élément existant -->
+    <p id="texteModifiable">Texte d'origine</p>
+    <button onclick="modifierTexte()">Modifier le texte</button>
+    <script>
+        function modifierTexte() {
+            document.getElementById("texteModifiable").textContent = "Texte modifié !";
+        }
+    </script>
+
+
+    <!-- 3 : Ajouter et modifier des classes -->
+    <div id="bloc" style="width: 100px; height: 100px; background-color: lightblue;"></div>
+    <button onclick="ajouterClass()">Ajouter une classe</button>
+    <style>
+        .rotate {
+            transform: rotate(20deg);
+            background-color: lightgreen;
+        }
+    </style>
+    <script>
+        function ajouterClass() {
+            document.getElementById("bloc").classList.add("rotate");
+        }
+    </script>
+
+
+    <!-- 4 : Supprimer un élément -->
+    <div id="aSupprimer">Clique pour supprimer cet élément</div>
+    <button onclick="supprimerElement()">Supprimer</button>
+    <Script>
+        function supprimerElement() {
+            const element = document.getElementById("aSupprimer");
+            element.remove();
+        }
+    </Script>
+
+
+    <!-- 5 : Déplacer un élément -->
+    <div id="zone1" style="border: 1px solid black; padding: 10px; margin-bottom: 10px;">Zone 1</div>
+    <div id="zone2" style="border: 1px solid black; padding: 10px;">Zone 2</div>
+    <button onclick="deplacerZone()">Déplacer vers Zone 2</button>
+    <script>
+        function deplacerZone() {
+            const zone = document.getElementById("zone1");
+            const destination = document.getElementById("zone2");
+            destination.appendChild(zone);
+        }
+    </script>
+
+
+    <!-- 6 : Insérer un élément avant un autre -->
+    <ul id="maListe">
+        <li>Item 1</li>
+        <li id="item2">Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <button onclick="insererAvant()">Insérer avant Item 2</button>
+    <script>
+        function insererAvant() {
+            const nouveauItem = document.createElement("li");
+            nouveauItem.textContent = "Nouveau avant Item 2";
+            const item2 = document.getElementById("item2");
+            const liste = document.getElementById("maListe");
+            liste.insertBefore(nouveauItem, item2);
+        }
+    </script>
+</body>
+
+</html>

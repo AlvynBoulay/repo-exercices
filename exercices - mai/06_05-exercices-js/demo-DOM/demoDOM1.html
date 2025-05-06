@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démo n°1 - DOM</title>
+</head>
+
+<body>
+
+
+    <!-- 1 : C'est quoi le DOM ? -->
+    <button onclick="afficherDOM()">Afficher le DOM</button>
+    <script>
+        function afficherDOM() {
+            console.log(document);
+        }
+    </script>
+
+
+    <!-- 2 : Selectionner un élément -->
+    <h1 id="titre">Bienvenue !</h1>
+    <button onclick="changerTitre()">Changer le titre</button>
+    <script>
+        function changerTitre() {
+            let titre = document.getElementById("titre");
+            titre.textContent = "Titre modifié !";
+        }
+    </script>
+
+
+    <!-- 3 : Modifier plusieurs éléments -->
+    <p>Paragraphe 1</p>
+    <p>Paragraphe 2</p>
+    <p>Paragraphe 3</p>
+    <button onclick="ChangerParagraphe()">Changer tous les Paragraphe</button>
+    <script>
+        function ChangerParagraphe() {
+            let paragraphes = document.getElementsByTagName("p");
+            for (let i = 0; i < paragraphes.length; i++) {
+                paragraphes[i].style.color = "red";
+                paragraphes[i].textContent = "Texte modifié !";
+            }
+        }
+    </script>
+
+
+    <!-- 4 : Transformer une HTMLCollection en Tableau -->
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <button onclick="colorierLi()">Colorier les éléments</button>
+    <script>
+        function colorierLi() {
+            let listeItems = document.getElementsByTagName("li");
+            let tableauItems = Array.from(listeItems);
+            tableauItems.forEach(function (item) {
+                item.style.backgroundColor = "blue";
+
+            });
+        }
+    </script>
+
+
+    <!-- 5 : NodeList vs HTMLCollection -->
+    <div class="boite">Boîte 1</div>
+    <div class="boite">Boîte 2</div>
+    <div class="boite">Boîte 3</div>
+    <button onclick="changerBoites()">Changer les boîtes</button>
+    <script>
+        function changerBoites() {
+            let boites = document.querySelectorAll(".boite");
+            boites.forEach(function (boite) {
+                boite.style.border = "2px solid blue";
+                boite.textContent = "Boite modifiée";
+            });
+        }
+    </script>
+
+
+    <!-- 6 : HTMLCollection vs NodeListv2 -->
+    <ul id="maListe">
+        <li>Élément 1</li>
+        <li>Élément 2</li>
+        <li>Élément 3</li>
+    </ul>
+    <button id="ajouter">Ajouter un élément</button>
+    <script>
+        const ul = document.getElementById('maListe');
+        const htmlCollection = document.getElementsByTagName('li');
+        const nodeList = document.querySelectorAll('li');
+        console.log('Avant ajout :');
+        console.log('HTMLCollection :', htmlCollection.length);
+        console.log('NodeList :', nodeList.length);
+
+        document.getElementById('ajouter').addEventListener('click', () => {
+            const nouveauLi = document.createElement('li');
+            nouveauLi.textContent = 'Element ajouté';
+            ul.appendChild(nouveauLi);
+
+            console.log('Après ajout :');
+            console.log('HTMLCollection :', htmlCollection.length);
+            console.log('NodeList :', nodeList.length);
+        });
+    </script>
+
+</body>
+
+</html>
