@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo - Evénements</title>
+</head>
+
+<body>
+    <h1>Demo - événements js</h1>
+
+    <!-- C'est quoi un événement ? -->
+    <button onclick="direBonjour()">Clique-moi</button>
+    <script>
+        function direBonjour() {
+            alert("Bonjour !");
+        }
+    </script>
+
+    <!-- ecouter un événement avec addEventListener -->
+    <button id="btnEvent">Clique-moi autrement</button>
+    <script>
+        let bouton = document.getElementById("btnEvent");
+        bouton.addEventListener("click", function () {
+            alert("Evenement capturé avec addEventListnner !");
+        });
+    </script>
+
+    <!-- L'objet Event -->
+    <button id="btnEventObject">Clique pour voir l'objet Event</button>
+    <script>
+        document.getElementById("btnEventObject").addEventListener("click", function (event) {
+            console.log(event);
+            alert("Regarde dans la console !");
+        });
+    </script>
+
+    <!-- Attacher plusieurs evenements -->
+    <div id="zoneMultiEvent" style="width: 150px; height: 150px; background-color: lightblue;"></div>
+    <script>
+        let zone = document.getElementById("zoneMultiEvent");
+
+        zone.addEventListener("mouseover", function () {
+            zone.style.backgroundColor = "yellow";
+        });
+
+        zone.addEventListener("mouseout", function () {
+            zone.style.backgroundColor = "lightblue";
+
+        });
+    </script>
+</body>
+
+</html>

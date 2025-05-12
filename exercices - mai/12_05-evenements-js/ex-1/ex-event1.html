@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EX- 1 - Evénements</title>
+</head>
+
+<body>
+    <h1>EX - 1 - événements js</h1>
+
+    <!-- 1 = Afficher un message au clic -->
+    <button onclick="bravo()">Clique ici</button>
+    <script>
+        function bravo() {
+            alert("Bravo, tu as cliqué !");
+        }
+    </script>
+
+    <!-- 2 = Changer la couleur d'un texte -->
+    <p id="texte">Cliquez ici pour changer la couleur du texte !</p>
+    <script>
+        const texte = document.getElementById('texte');
+        texte.addEventListener('click', function () {
+            texte.style.color = 'red';
+        });
+    </script>
+
+    <!-- 3 = Aggrandir un bouton au survol -->
+    <button id="btnAgrandir">Agrandissez-moi !</button>
+    <style>
+        #btnAgrandir {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+    </style>
+    <script>
+        const btnA = document.getElementById('btnAgrandir');
+        btnA.addEventListener('mouseover', function () {
+            btnA.style.transform = 'scale(1.2)';
+        });
+        btnA.addEventListener('mouseout', function () {
+            btnA.style.transform = "scale(1)";
+        });
+    </script>
+
+    <!-- 4 = Compter les clics -->
+    <button id="compteurBtn">Cliquez-ici</button>
+    <p id="affichage">Nombre de clics : 0</p>
+    <script>
+        let compteur = 0;
+        document.getElementById('compteurBtn').addEventListener('click', function () {
+            compteur++;
+            document.getElementById('affichage').textContent = "Nombre de clics : " + compteur;
+        });
+    </script>
+
+    <!-- 5 = Desactiver un btn après 3 clics -->
+    <button id="btnDefi5">Cliquez ici (Défi 5)</button>
+    <p id="compteurDefi5">Nombre de clics : 0</p>
+    <script>
+        let clicsDefi5 = 0;
+        const btnDefi5 = document.getElementById('btnDefi5');
+        const compteurDefi5 = document.getElementById('compteurDefi5');
+        btnDefi5.addEventListener('click', function () {
+            clicsDefi5++;
+            compteurDefi5.textContent = "Nombre de clics : " + clicsDefi5;
+            if (clicsDefi5 >= 3) {
+                btnDefi5.disabled = true;
+                btnDefi5.textContent = "Bouton désactivé";
+            }
+        });
+    </script>
+
+    <!-- 6 = Creer un element dynamique -->
+    <button id="btnAjouter">Ajouter un paragraphe</button>
+    <div id="zoneParagraphe"></div>
+    <script>
+        const btnAjouter = document.getElementById('btnAjouter');
+        const zone = document.getElementById('zoneParagraphe');
+        btnAjouter.addEventListener('click', function () {
+            const nouveauP = document.createElement('p');
+            nouveauP.textContent = "Nouveau paragraphe ajouté !";
+            zone.appendChild(nouveauP);
+        });
+    </script>
+
+    <!-- 7 = Supprimer un élément au clic -->
+    <div id="boiteDefi7">Clique ici pour me faire disparaître !</div>
+    <script>
+        const boite = document.getElementById('boiteDefi7');
+        boite.addEventListener('click', function () {
+            boite.remove();
+        });
+    </script>
+
+</html>
