@@ -1,0 +1,39 @@
+.accordion {
+  max-width: 600px;
+  margin: 2rem auto;
+  font-family: sans-serif;
+}
+
+.accordion__bloc {
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.accordion__title {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f3f3f3;
+}
+
+.caret-down {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.accordion__bloc.active .caret-down {
+  transform: rotate(180deg);
+}
+
+.accordion__answer-bloc {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.accordion__answer {
+  padding: 1rem;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
