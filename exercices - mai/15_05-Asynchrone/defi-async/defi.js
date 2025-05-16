@@ -12,3 +12,32 @@ setTimeout(function() {
 setTimeout(function() {
     console.log("Message 2 (3sec)");
 }, 3000);
+
+/* Defi 3, bouton charger */
+document.getElementById("btnCharger").addEventListener("click", function() {
+    document.getElementById("contenu").textContent = "Chargement en cours...";
+    setTimeout(function() {
+        document.getElementById("contenu").textContent = "Contenu chargé avec succès";
+    }, 2000);
+});
+
+/* Défi 4, le chronomètre */
+let compteur = 0;
+let intervalId = null;
+const compteurEl = document.getElementById("compteur");
+const startBtn = document.getElementById("start");
+const stopBtn = document.getElementById("stop");
+
+startBtn.addEventListener("click", () => {
+    if (intervalId === null) {
+        intervalId = setInterval(() => {
+            compteur++;
+            compteurEl.textContent = compteur;
+        }, 1000);
+    }
+});
+
+stopBtn.addEventListener("click", () => {
+    clearInterval(intervalId);
+    intervalId = null;
+});
