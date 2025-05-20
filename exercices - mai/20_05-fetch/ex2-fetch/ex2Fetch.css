@@ -1,0 +1,39 @@
+#character {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  max-width: 400px;
+  background-color: #1e1e2f;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+#character img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+#character h3 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+/* AJOUT */
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,0 +1,5 @@
+[
+    { "nom": "Luna", "espece": "chat" },
+    { "nom": "Rex", "espece": "chien" },
+    { "nom": "Polly", "espece": "Perroquet" }
+]

@@ -1,0 +1,23 @@
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+#pokemon {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  min-width: 200px;
+  max-width: 150px;
+}
+
+img {
+  width: 150px;
+  height: auto;
+}
