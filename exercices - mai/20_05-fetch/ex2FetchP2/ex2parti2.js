@@ -16,7 +16,6 @@ boutonMulti.addEventListener("click", async function () {
   galerie.innerHTML = ""; // On vide la galerie
 
   for (let i = 0; i < 10; i++) {
-    // Ton code ici (y compris promise, then, catch)
     let id = Math.floor(Math.random() * totalPersonnages) + 1;
 
     try {
