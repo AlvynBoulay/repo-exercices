@@ -1,0 +1,66 @@
+// === Exercices JavaScript — Difficulté progressive ===
+
+// === VARIABLES & TYPES ===
+
+// Exo 1 : Crée deux variables, prenom (string) et age (number), puis affiche une phrase personnalisée
+// Exemple : Bonjour, je m'appelle Alice et j'ai 30 ans.
+
+// Exo 2 : Crée une constante ville, essaie de la modifier ensuite. Explique ce qu’il se passe.
+
+// === CONDITIONS ===
+
+// Exo 3 : Crée une variable age et affiche si la personne est mineure, majeure, ou senior (65+).
+
+// Exo 4 : Demande un nombre et affiche s’il est divisible par 2, 3, les deux, ou aucun.
+
+// Exo 5 : Utilise switch pour afficher la saison selon le mois (par nom ou numéro).
+
+// === BOUCLES ===
+
+// Exo 6 : Affiche les nombres de 1 à 20 en sautant ceux divisibles par 3 (continue).
+
+// Exo 7 : Calcule la somme des nombres impairs entre 0 et 100.
+
+// Exo 8 : Affiche les puissances de 2 jusqu’à dépasser 1000 avec une boucle while.
+
+// === TABLEAUX ===
+
+const fruits = ["pomme", "banane", "kiwi", "fraise"];
+
+// Exo 9 : Affiche tous les fruits avec leur index (forEach).
+
+// Exo 10 : Crée un nouveau tableau avec les fruits en majuscules (map).
+
+// Exo 11 : À partir d’un tableau de nombres, retourne la moyenne sans utiliser reduce.
+
+// === OBJETS ===
+
+const personne = {
+  nom: "Jean",
+  age: 35,
+  ville: "Toulouse"
+};
+
+// Exo 12 : Affiche toutes les propriétés de l’objet avec for...in.
+
+// Exo 13 : Crée un tableau d’objets personnes, et affiche les noms de ceux qui ont plus de 30 ans.
+
+// === MAP & SET ===
+
+// Exo 14 : Crée une Map avec des types différents comme clés, puis affiche toutes les paires clé/valeur.
+
+// Exo 15 : Utilise un Set pour détecter les doublons dans un tableau de noms, puis affiche les noms répétés.
+
+// === GESTION D'ERREURS ===
+
+// Exo 16 : Crée une fonction diviser(a, b) qui lève une erreur si b == 0. Gère avec try...catch.
+
+// Exo 17 : Crée une fonction getProperty(obj, prop) qui retourne la propriété si elle existe, sinon lève une erreur.
+
+// === COMBINÉS (Challenge) ===
+
+// Exo 18 : Crée un tableau d’étudiants (nom, note). Affiche ceux qui ont la meilleure note.
+
+// Exo 19 : Écris une fonction qui trie un tableau de chaînes par longueur décroissante.
+
+// Exo 20 : Crée une mini-analyse de texte : compte le nombre d’occurrences uniques de chaque mot dans une phrase.
