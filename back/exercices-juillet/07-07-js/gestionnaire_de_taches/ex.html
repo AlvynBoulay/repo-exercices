@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercices JS</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1>Gestionnaire de Tâches</h1>
+
+    <form id="formTache">
+        <input type="text" id="inputTitre" placeholder="Titre de la tâche" required />
+        <select id="selectPriorite">
+            <option value="basse">Basse</option>
+            <option value="moyenne" selected>Moyenne</option>
+            <option value="haute">Haute</option>
+        </select>
+        <button type="submit">Ajouter</button>
+
+        <input type="number" id="inputIndex" placeholder="Index à supprimer" min="0" />
+        <button type="button" id="btnSupprimer">Supprimer</button>
+    </form>
+
+    <div class="conteneur-principal">
+        <div class="colonne-gauche">
+            <h2>Liste des tâches</h2>
+            <ul id="listeTaches"></ul>
+        </div>
+        <div class="colonne-droite">
+            <h2>Historique des actions</h2>
+            <ul id="listeHistorique"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+
+</html>
