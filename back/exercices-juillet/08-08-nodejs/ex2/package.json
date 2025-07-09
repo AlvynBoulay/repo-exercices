@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "figlet": "^1.8.1"
+  },
+  "name": "ex2",
+  "version": "1.0.0",
+  "description": "Dans ce mini-TP, tu vas créer un petit programme en Node.js qui affiche un message de bienvenue stylisé grâce à l’ASCII Art. Ce sera l'occasion de découvrir comment utiliser `npm` et importer des packages tiers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
