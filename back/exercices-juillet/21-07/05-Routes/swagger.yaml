@@ -1,0 +1,116 @@
+openapi: 3.0.3
+
+info:
+  title: API CineClub
+  version: 1.0.0
+  description: Une API simple pour gérer des films.
+
+paths:
+  /films:
+    get:
+      tags:
+        - Films
+      summary: Obtenir tous les films
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    titre:
+                      type: string
+
+    post:
+      tags:
+        - Modifier/Delete
+      summary: Ajouter un nouveau film
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - id
+                - titre
+              properties:
+                id:
+                  type: integer
+                titre:
+                  type: string
+      responses:
+        "201":
+          description: Film ajouté avec succès
+
+  /films/{id}:
+    get:
+      tags:
+        - Films
+      summary: Obtenir un film par ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Renvoie l’objet film en JSON avec un status 200 par défaut
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  titre:
+                    type: string
+        "404":
+          description: Film introuvable
+
+    patch:
+      tags:
+        - Modifier/Delete
+      summary: Modifier le titre d’un film
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - titre
+              properties:
+                titre:
+                  type: string
+      responses:
+        "200":
+          description: Titre du film mis à jour.
+
+    delete:
+      tags:
+        - Modifier/Delete
+      summary: Supprimer un film
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: réponse avec statut 204 et corps vide
+        "404":
+          description: Film à supprimer introuvable.
