@@ -1,0 +1,34 @@
+db.pokemons.find()
+db.collection.find()
+db.trainers.find()
+db.battles.find()
+
+READ
+db.pokemons.find({ type: "Fire" })
+db.pokemons.find({ level: { $gte: 20 } })
+db.pokemons.find({ name: "Magikarp" }, { _id: 0 })
+db.pokemons.find({}, { _id: 0, name: 1 })
+db.trainers.find({ region: "Kanto" })
+db.trainers.find({ badges: "Cascade" })
+db.battles.find({ winner: "Sacha" })
+db.battles.find({ location: "Celadon" })
+
+CREATE
+db.collection.insertOne({name: "Bulbasaur", type: ["Grass", "Poison"], level: 15, attacks: ["Tackle", "Vine Whip"]})
+db.trainers.insertOne({name: "Lila", region: "Johto", pokemons: ["Togepi", "Eevee"]})
+db.battles.insertOne({trainer1: "Lila", Trainer2: "Sacha", winner: "Lila", location: "Doublonville"})
+
+UPDATE
+db.pokemons.updateMany({ type: "Water" }, { $inc: { level: 1 } })
+db.trainers.updateOne({ name: "Red" }, { $set: { name: "Ash Ketchum" } })
+db.pokemons.updateOne({ name: "Abra" }, { $push: { attacks: "Thunderbolt" } })
+db.trainers.updateOne({ name: "Brock" }, { $push: { badges: "Volcan" } })
+db.pokemons.updateOne({ name: "Eevee" }, { $pull: { attacks: "Bite" } })
+db.trainers.updateOne({ name: "Lila" }, { $push: { pokemons: "Bulbasaur" } })
+
+DELETE 
+db.pokemons.deleteOne({ name: "Rattata" })
+db.battles.deleteMany({ arene: "Argenta" })
+db.trainers.deleteOne({ name: "Jessie" })
+db.pokemons.deleteMany({ level: { $lt: 18 }})
+db.dresseurs.updateOne({ name: "Pierre" }, { $pull: { badges: "Roche" } })

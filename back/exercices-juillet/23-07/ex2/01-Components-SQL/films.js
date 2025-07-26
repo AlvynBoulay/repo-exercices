@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const db = require('./db');
-require('dotenv').config()
 
 // 1. GET / : liste complète
 router.get('/', async (req, res) => {
@@ -11,8 +10,8 @@ router.get('/', async (req, res) => {
 
 // 2. GET /:id : film par ID
 router.get('/:id', async (req, res) => {
-  const filmId = req.params.id;
-  const [rows] = await db.execute('SELECT * FROM films WHERE id = ?', [filmId]);
+  //TODO : ECRIRE LA REQUETE PREPAREE
+  // const [rows] = 
   if (rows.length === 0) return res.status(404).send('Film non trouvé');
   res.json(rows[0]);
 });
@@ -23,7 +22,7 @@ router.post('/', async (req, res) => {
   if (!id || !titre) return res.status(400).send('id et titre requis');
 
   try {
-    await db.execute('INSERT INTO films (id, titre) VALUES (?, ?)', [id, titre]);
+    //TODO : ECRIRE LA REQUETE PREPAREE
     res.status(201).send('Film ajouté');
   } catch (err) {
     res.status(500).send('Erreur : ' + err.message);
@@ -33,13 +32,9 @@ router.post('/', async (req, res) => {
 // 4. PATCH /:id : modification du titre
 router.patch('/:id', async (req, res) => {
   const { titre } = req.body;
-  const filmId = req.params.id;
   if (!titre) return res.status(400).send('Nouveau titre requis');
     
-const [result] = await db.execute(
-  'UPDATE films SET titre = ? WHERE id = ?',
-  [titre, filmId]
-);
+  //TODO : ECRIRE LA REQUETE PREPAREE
   if (result.affectedRows === 0) return res.status(404).send('Film non trouvé');
   res.send('Titre mis à jour');
 });
@@ -50,5 +45,23 @@ router.delete('/:id', async (req, res) => {
   if (result.affectedRows === 0) return res.status(404).send('Film non trouvé');
   res.send('Film supprimé');
 });
+
+const Joi = require('joi');
+
+const filmsSchema = Joi.object({
+  titre: Joi.string().min(1).max(255).required(),
+  duree_minutes: Joi.number().integer().min(1).required(),
+  annee_sortie: Joi.number().integer().min(1888).max(new Date().getFullYear()).required(),
+  note: Joi.number().min(0).max(10).precision(1).optional(),
+  realisateur_id: Joi.number().integer().required(),
+  acteurs_id: Joi.array().items(Joi.number().integer()).min(1).required()
+});
+
+const { error, value } = filmsSchema.validate(req.body.user);
+
+if (error) {
+  res.send('Erreur lors de la validation des données : ' + error.details[0].message);
+}
+
 
 module.exports = router;

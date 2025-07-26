@@ -1,9 +1,6 @@
 const express = require('express');
 const app = express();
-const filmsRoutes = require('./routes/films');
-require('dotenv').config()
-
-
+const filmsRoutes = require('./films');
 
 app.use(express.json());
 app.use('/films', filmsRoutes);
