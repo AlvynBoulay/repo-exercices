@@ -1,4 +1,30 @@
-const { getDb } = require('../connectionDb');
+const Pokemon = require('../models/pokemons');
+
+async function findAll() {
+    return await Pokemon.find();
+}
+
+async function findById(id) {
+    return await Pokemon.findById(id);
+}
+
+async function create(pokemon) {
+    const newPokemon = new Pokemon(pokemon);
+    return await newPokemon.save();
+}
+
+async function update(id, data) {
+    return await Pokemon.findByIdAndUpdate(id, data, { new: true });
+}
+
+async function remove(id) {
+    const result = await Pokemon.findByIdAndDelete(id);
+    return result !== null;
+}
+
+module.exports = { findAll, findById, create, update, remove };
+
+/* const { getDb } = require('../connectionDb');
 const { ObjectId } = require('mongodb');
 
 const collection = () => getDb().collection('pokemons');
@@ -26,4 +52,4 @@ async function remove(id) {
     return result.deletedCount > 0;
 }
 
-module.exports = { findAll, findById, create, update, remove};
+module.exports = { findAll, findById, create, update, remove}; */
